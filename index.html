@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Weekly reporting without copy‑paste — Excel / Power Query & KNIME</title>
+  <meta name="description" content="I turn Shopify/Stripe/CSV exports into a refresh‑button Excel dashboard + a Flags tab. Setup CHF 490, retainer from CHF 650/mo. 48‑hour SLA." />
+  <meta property="og:title" content="Weekly reporting without copy‑paste" />
+  <meta property="og:description" content="Refresh‑button Excel dashboard + Flags tab. Setup CHF 490, retainer from CHF 650/mo." />
+  <meta property="og:type" content="website" />
+  <meta name="format-detection" content="telephone=no" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>📊</text></svg>">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .container { max-width: 1080px; }
+    .card { @apply rounded-2xl shadow-sm border border-gray-200 bg-white; }
+  </style>
+</head>
+<body class="antialiased text-gray-800">
+  <!-- Top bar -->
+  <header class="sticky top-0 z-30 bg-white/90 backdrop-blur border-b border-gray-100">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#home" class="font-semibold tracking-tight">XsellBiz</a>
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="#how" class="hover:text-gray-900 text-gray-600">How it works</a>
+        <a href="#offer" class="hover:text-gray-900 text-gray-600">Offer</a>
+        <a href="#faq" class="hover:text-gray-900 text-gray-600">FAQ</a>
+        <a href="#book" class="hover:text-gray-900 text-gray-600">Book</a>
+      </nav>
+      <a href="#book" class="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-black text-white text-sm">Book 15‑min demo</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="bg-gradient-to-b from-gray-50 to-white">
+    <div class="container mx-auto px-4 py-16 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <h1 class="text-3xl md:text-5xl font-bold leading-tight">Weekly reporting <span class="whitespace-nowrap">without copy‑paste</span></h1>
+        <p class="mt-4 text-lg text-gray-600">I turn your Shopify/Stripe/CSV exports into a <strong>refresh‑button Excel dashboard</strong> + a <strong>Flags</strong> tab (duplicates, outliers, missing keys).
+        </p>
+        <ul class="mt-6 space-y-2 text-gray-700">
+          <li>• Setup <strong>CHF 490</strong></li>
+          <li>• Retainer from <strong>CHF 650/mo</strong> · <strong>48‑hour SLA</strong></li>
+          <li>• Runs locally — your data stays with you</li>
+        </ul>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#book" class="px-5 py-3 rounded-xl bg-black text-white">Book 15‑min demo</a>
+          <a href="YOUR_STRIPE_PAYMENT_LINK" class="px-5 py-3 rounded-xl border border-gray-300">Start pilot (CHF 490)</a>
+        </div>
+        <p class="mt-3 text-xs text-gray-500">Add UTM to links e.g. <code>?utm_source=linkedin</code></p>
+      </div>
+      <div class="md:pl-8">
+        <!-- Replace Loom URL below -->
+        <div class="aspect-video rounded-2xl overflow-hidden shadow ring-1 ring-gray-200">
+          <iframe src="YOUR_LOOM_DEMO_URL" title="90‑sec demo" class="w-full h-full" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        <div class="mt-4 text-xs text-gray-500">90‑sec: Before → Click → After</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust strip -->
+  <section class="py-6 border-y bg-white">
+    <div class="container mx-auto px-4 flex flex-wrap items-center gap-6 text-sm text-gray-500">
+      <span>Excel / Power Query</span>
+      <span>KNIME</span>
+      <span>Alteryx (cert‑ready)</span>
+      <span>GDPR‑aware</span>
+      <span>48‑hour SLA</span>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section id="how" class="py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-semibold">How it works</h2>
+      <div class="mt-8 grid md:grid-cols-3 gap-6">
+        <div class="card p-6">
+          <div class="text-sm uppercase tracking-wide text-gray-500">Step 1</div>
+          <h3 class="mt-1 font-semibold">Drop exports into <code>/input/</code></h3>
+          <p class="mt-2 text-gray-600">Orders, fees, shipping (or CRM contacts). We map headers once.</p>
+        </div>
+        <div class="card p-6">
+          <div class="text-sm uppercase tracking-wide text-gray-500">Step 2</div>
+          <h3 class="mt-1 font-semibold">Click <em>Refresh</em></h3>
+          <p class="mt-2 text-gray-600">Power Query/KNIME cleans, joins, and flags issues automatically.</p>
+        </div>
+        <div class="card p-6">
+          <div class="text-sm uppercase tracking-wide text-gray-500">Step 3</div>
+          <h3 class="mt-1 font-semibold">Use the clean table & dashboard</h3>
+          <p class="mt-2 text-gray-600">Share <code>clean.csv</code>, scan the Flags tab, and review KPIs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Offer / Pricing -->
+  <section id="offer" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-semibold">Offer</h2>
+      <div class="mt-8 grid md:grid-cols-2 gap-6">
+        <div class="card p-6">
+          <h3 class="text-xl font-semibold">Reporting Retainer</h3>
+          <p class="mt-1 text-gray-600">From <strong>CHF 650/mo</strong></p>
+          <ul class="mt-4 space-y-2 text-gray-700">
+            <li>• 2 data sources included (add +CHF 100/source)</li>
+            <li>• Flags tab (negative margin, missing COGS, dupes, outliers)</li>
+            <li>• Monthly tune‑up + 10‑min Loom recap</li>
+            <li>• <strong>48‑hour SLA</strong> (24h priority +CHF 150/mo)</li>
+          </ul>
+          <a href="#book" class="mt-6 inline-flex px-4 py-2 rounded-xl bg-black text-white">Book a demo</a>
+        </div>
+        <div class="card p-6">
+          <h3 class="text-xl font-semibold">Setup</h3>
+          <p class="mt-1 text-gray-600"><strong>CHF 490</strong> one‑time</p>
+          <ul class="mt-4 space-y-2 text-gray-700">
+            <li>• Column mapping + baseline reconciliation</li>
+            <li>• COGS & taxonomy merge</li>
+            <li>• QA checklist + Changelog sheet</li>
+            <li>• Loom walkthrough for your team</li>
+          </ul>
+          <a href="YOUR_STRIPE_PAYMENT_LINK" class="mt-6 inline-flex px-4 py-2 rounded-xl border border-gray-300">Start pilot now</a>
+        </div>
+      </div>
+      <div class="mt-8 card p-6">
+        <h3 class="font-semibold">Guarantee</h3>
+        <p class="mt-2 text-gray-700">30‑day <em>“saves ≥4 hours or refund”</em>. Month‑to‑month. Cancel anytime.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-semibold">FAQ</h2>
+      <div class="mt-6 grid md:grid-cols-2 gap-6">
+        <div class="card p-6">
+          <h3 class="font-semibold">Do you store our data?</h3>
+          <p class="mt-2 text-gray-600">No. Everything runs locally in Excel/KNIME. If you share files, we sign an NDA.</p>
+        </div>
+        <div class="card p-6">
+          <h3 class="font-semibold">How fast is setup?</h3>
+          <p class="mt-2 text-gray-600">48–72 hours for typical exports (≤50k rows/file). We can prioritize if needed.</p>
+        </div>
+        <div class="card p-6">
+          <h3 class="font-semibold">What if we don’t like it?</h3>
+          <p class="mt-2 text-gray-600">30‑day refund on the retainer. You keep the template and documentation.</p>
+        </div>
+        <div class="card p-6">
+          <h3 class="font-semibold">Is this GDPR‑friendly?</h3>
+          <p class="mt-2 text-gray-600">Yes. We avoid sending PII to AI services; processing stays on your devices.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Book -->
+  <section id="book" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4 grid md:grid-cols-2 gap-8 items-center">
+      <div>
+        <h2 class="text-2xl md:text-3xl font-semibold">Book a 15‑minute demo</h2>
+        <p class="mt-2 text-gray-600">Pick a slot that works. I’ll show the 90‑sec flow and how we map your exports.</p>
+        <ul class="mt-4 text-gray-700 space-y-2">
+          <li>• Outcome focus — hours saved & accuracy</li>
+          <li>• Clear next step — pilot or a no‑go</li>
+        </ul>
+      </div>
+      <div class="card p-3">
+        <!-- Replace Calendly link below -->
+        <div class="aspect-video rounded-xl overflow-hidden">
+          <iframe src="YOUR_CALENDLY_EMBED_URL" title="Calendly" class="w-full h-full"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer / imprint -->
+  <footer class="py-10 border-t">
+    <div class="container mx-auto px-4 text-sm text-gray-600 grid md:grid-cols-3 gap-6">
+      <div>
+        <div class="font-semibold">XsellBiz</div>
+        <div>Switzerland</div>
+        <a class="underline" href="mailto:hello@xsellbiz.com">hello@xsellbiz.com</a>
+      </div>
+      <div>
+        <div class="font-semibold">Imprint</div>
+        <p class="mt-1">Sole proprietorship. VAT: (if registered). Data is processed locally; no PII sent to AI services without consent.</p>
+      </div>
+      <div>
+        <div class="font-semibold">Links</div>
+        <ul class="mt-1 space-y-1">
+          <li><a href="#how" class="underline">How it works</a></li>
+          <li><a href="#offer" class="underline">Offer</a></li>
+          <li><a href="#faq" class="underline">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container mx-auto px-4 mt-6 text-xs text-gray-400">© <span id="y"></span> XsellBiz. All rights reserved.</div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
