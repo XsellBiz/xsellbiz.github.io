@@ -3,19 +3,29 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Weekly reporting without copy‑paste — Excel / Power Query & KNIME</title>
-  <meta name="description" content="I turn Shopify/Stripe/CSV exports into a refresh‑button Excel dashboard + a Flags tab. Setup CHF 490, retainer from CHF 650/mo. 48‑hour SLA." />
-  <meta property="og:title" content="Weekly reporting without copy‑paste" />
-  <meta property="og:description" content="Refresh‑button Excel dashboard + Flags tab. Setup CHF 490, retainer from CHF 650/mo." />
+  <title>Weekly reporting without copy-paste — XsellBiz</title>
+  <meta name="description" content="I turn Shopify/Stripe/CSV exports into a refresh-button Excel dashboard + a Flags tab. Setup CHF 490, retainer from CHF 650/mo. 48-hour SLA." />
+
+  <!-- SEO / Social -->
+  <link rel="canonical" href="https://www.xsellbiz.com/">
+  <meta property="og:title" content="Weekly reporting without copy-paste — XsellBiz" />
+  <meta property="og:description" content="Refresh-button Excel dashboard + Flags tab. Setup CHF 490, retainer from CHF 650/mo." />
   <meta property="og:type" content="website" />
-  <meta name="format-detection" content="telephone=no" />
+  <meta property="og:url" content="https://www.xsellbiz.com" />
+
+  <!-- Favicon (simple emoji) -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>📊</text></svg>">
+
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Calendly popup assets -->
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
   <style>
     .container { max-width: 1080px; }
-    .card { @apply rounded-2xl shadow-sm border border-gray-200 bg-white; }
+    .card { border: 1px solid #e5e7eb; border-radius: 1rem; background: #fff; box-shadow: 0 1px 2px rgba(0,0,0,.03); }
   </style>
 </head>
 <body class="antialiased text-gray-800">
@@ -29,7 +39,7 @@
         <a href="#faq" class="hover:text-gray-900 text-gray-600">FAQ</a>
         <a href="#book" class="hover:text-gray-900 text-gray-600">Book</a>
       </nav>
-      <a href="#book" class="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-black text-white text-sm">Book 15‑min demo</a>
+      <a href="#book" class="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-black text-white text-sm">Book 15-min demo</a>
     </div>
   </header>
 
@@ -37,26 +47,28 @@
   <section id="home" class="bg-gradient-to-b from-gray-50 to-white">
     <div class="container mx-auto px-4 py-16 grid md:grid-cols-2 gap-10 items-center">
       <div>
-        <h1 class="text-3xl md:text-5xl font-bold leading-tight">Weekly reporting <span class="whitespace-nowrap">without copy‑paste</span></h1>
-        <p class="mt-4 text-lg text-gray-600">I turn your Shopify/Stripe/CSV exports into a <strong>refresh‑button Excel dashboard</strong> + a <strong>Flags</strong> tab (duplicates, outliers, missing keys).
+        <h1 class="text-3xl md:text-5xl font-bold leading-tight">Weekly reporting <span class="whitespace-nowrap">without copy-paste</span></h1>
+        <p class="mt-4 text-lg text-gray-600">
+          I turn your Shopify/Stripe/CSV exports into a <strong>refresh-button Excel dashboard</strong> + a <strong>Flags</strong> tab (duplicates, outliers, missing keys).
         </p>
         <ul class="mt-6 space-y-2 text-gray-700">
           <li>• Setup <strong>CHF 490</strong></li>
-          <li>• Retainer from <strong>CHF 650/mo</strong> · <strong>48‑hour SLA</strong></li>
+          <li>• Retainer from <strong>CHF 650/mo</strong> · <strong>48-hour SLA</strong></li>
           <li>• Runs locally — your data stays with you</li>
         </ul>
         <div class="mt-8 flex flex-wrap gap-3">
-          <a href="#book" class="px-5 py-3 rounded-xl bg-black text-white">Book 15‑min demo</a>
-          <a id="pilotBtn1" href="#" class="px-5 py-3 rounded-xl border border-gray-300">Start pilot (CHF 490)</a>
+          <a href="#book" class="px-5 py-3 rounded-xl bg-black text-white">Book 15-min demo</a>
+          <a id="pilotBtnHero" href="#" class="px-5 py-3 rounded-xl border border-gray-300">Start pilot (CHF 490)</a>
         </div>
         <p class="mt-3 text-xs text-gray-500">Add UTM to links e.g. <code>?utm_source=linkedin</code></p>
       </div>
       <div class="md:pl-8">
-        <!-- Replace Loom URL below -->
+        <!-- Loom embed -->
         <div class="aspect-video rounded-2xl overflow-hidden shadow ring-1 ring-gray-200">
-          <iframe id="demoFrame" src="about:blank" title="90‑sec demo" class="w-full h-full" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          <iframe src="https://www.loom.com/embed/05557bee494c4fd7851f8e27741160d5"
+                  title="90-sec demo" class="w-full h-full" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
-        <div class="mt-4 text-xs text-gray-500">90‑sec: Before → Click → After</div>
+        <div class="mt-4 text-xs text-gray-500">90-sec: Before → Click → After</div>
       </div>
     </div>
   </section>
@@ -66,9 +78,9 @@
     <div class="container mx-auto px-4 flex flex-wrap items-center gap-6 text-sm text-gray-500">
       <span>Excel / Power Query</span>
       <span>KNIME</span>
-      <span>Alteryx (cert‑ready)</span>
-      <span>GDPR‑aware</span>
-      <span>48‑hour SLA</span>
+      <span>Alteryx (cert-ready)</span>
+      <span>GDPR-aware</span>
+      <span>48-hour SLA</span>
     </div>
   </section>
 
@@ -107,26 +119,26 @@
           <ul class="mt-4 space-y-2 text-gray-700">
             <li>• 2 data sources included (add +CHF 100/source)</li>
             <li>• Flags tab (negative margin, missing COGS, dupes, outliers)</li>
-            <li>• Monthly tune‑up + 10‑min Loom recap</li>
-            <li>• <strong>48‑hour SLA</strong> (24h priority +CHF 150/mo)</li>
+            <li>• Monthly tune-up + 10-min Loom recap</li>
+            <li>• <strong>48-hour SLA</strong> (24h priority +CHF 150/mo)</li>
           </ul>
           <a href="#book" class="mt-6 inline-flex px-4 py-2 rounded-xl bg-black text-white">Book a demo</a>
         </div>
         <div class="card p-6">
           <h3 class="text-xl font-semibold">Setup</h3>
-          <p class="mt-1 text-gray-600"><strong>CHF 490</strong> one‑time</p>
+          <p class="mt-1 text-gray-600"><strong>CHF 490</strong> one-time</p>
           <ul class="mt-4 space-y-2 text-gray-700">
             <li>• Column mapping + baseline reconciliation</li>
             <li>• COGS & taxonomy merge</li>
             <li>• QA checklist + Changelog sheet</li>
             <li>• Loom walkthrough for your team</li>
           </ul>
-          <a id="pilotBtn2" href="#" class="mt-6 inline-flex px-4 py-2 rounded-xl border border-gray-300">Start pilot now</a>
+          <a id="pilotBtnOffer" href="#" class="mt-6 inline-flex px-4 py-2 rounded-xl border border-gray-300">Start pilot now</a>
         </div>
       </div>
       <div class="mt-8 card p-6">
         <h3 class="font-semibold">Guarantee</h3>
-        <p class="mt-2 text-gray-700">30‑day <em>“saves ≥4 hours or refund”</em>. Month‑to‑month. Cancel anytime.</p>
+        <p class="mt-2 text-gray-700">30-day <em>“saves ≥4 hours or refund”</em>. Month-to-month. Cancel anytime.</p>
       </div>
     </div>
   </section>
@@ -138,7 +150,7 @@
       <div class="mt-6 grid md:grid-cols-2 gap-6">
         <div class="card p-6">
           <h3 class="font-semibold">Do you store our data?</h3>
-          <p class="mt-2 text-gray-600">No. Everything runs locally in Excel/KNIME. If you share files, we sign an NDA.</p>
+          <p class="mt-2 text-gray-600">No. Everything runs locally in Excel/KNIME. If you share files, we can sign an NDA.</p>
         </div>
         <div class="card p-6">
           <h3 class="font-semibold">How fast is setup?</h3>
@@ -146,10 +158,10 @@
         </div>
         <div class="card p-6">
           <h3 class="font-semibold">What if we don’t like it?</h3>
-          <p class="mt-2 text-gray-600">30‑day refund on the retainer. You keep the template and documentation.</p>
+          <p class="mt-2 text-gray-600">30-day refund on the retainer. You keep the template and documentation.</p>
         </div>
         <div class="card p-6">
-          <h3 class="font-semibold">Is this GDPR‑friendly?</h3>
+          <h3 class="font-semibold">Is this GDPR-friendly?</h3>
           <p class="mt-2 text-gray-600">Yes. We avoid sending PII to AI services; processing stays on your devices.</p>
         </div>
       </div>
@@ -160,19 +172,22 @@
   <section id="book" class="py-16 bg-gray-50">
     <div class="container mx-auto px-4 grid md:grid-cols-2 gap-8 items-center">
       <div>
-        <h2 class="text-2xl md:text-3xl font-semibold">Book a 15‑minute demo</h2>
-        <p class="mt-2 text-gray-600">Pick a slot that works. I’ll show the 90‑sec flow and how we map your exports.</p>
+        <h2 class="text-2xl md:text-3xl font-semibold">Book a 15-minute demo</h2>
+        <p class="mt-2 text-gray-600">Pick a slot that works. I’ll show the 90-sec flow and how we map your exports.</p>
         <ul class="mt-4 text-gray-700 space-y-2">
           <li>• Outcome focus — hours saved & accuracy</li>
-          <li>• Clear next step — pilot or a no‑go</li>
+          <li>• Clear next step — pilot or a no-go</li>
         </ul>
         <div class="mt-6 flex gap-3">
-          <a href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/mystic42/30min?hide_event_type_details=1&primary_color=000000'}); return false;" class="px-5 py-3 rounded-xl bg-black text-white">Open booking popup</a>
-          <a href="https://calendly.com/mystic42/30min" target="_blank" rel="noopener" class="px-5 py-3 rounded-xl border border-gray-300">Open in new tab</a>
+          <a href="#"
+             onclick="Calendly.initPopupWidget({url: 'https://calendly.com/xsellbiz/30min?hide_event_type_details=1&primary_color=000000'}); return false;"
+             class="px-5 py-3 rounded-xl bg-black text-white">Open booking popup</a>
+          <a href="https://calendly.com/xsellbiz/30min" target="_blank" rel="noopener"
+             class="px-5 py-3 rounded-xl border border-gray-300">Open in new tab</a>
         </div>
       </div>
       <div class="card p-6">
-        <div class="text-gray-500 text-sm">If the popup is blocked by your browser, use the "Open in new tab" button.</div>
+        <div class="text-gray-500 text-sm">If the popup is blocked by your browser, use “Open in new tab”.</div>
       </div>
     </div>
   </section>
@@ -202,60 +217,23 @@
   </footer>
 
   <script>
-  document.getElementById('y').textContent = new Date().getFullYear();
-  const email = 'hello@xsellbiz.com';
-  const loom = 'https://www.loom.com/embed/05557bee494c4fd7851f8e27741160d5';
-  const calendly = 'https://calendly.com/mystic42/30min';
-  const stripe = '';
+    // Footer year
+    document.getElementById('y').textContent = new Date().getFullYear();
 
-  // Demo iframe
-  const demoFrame = document.getElementById('demoFrame');
-  if (loom) {
-    demoFrame.src = loom;
-  } else {
-    const ph = document.createElement('div');
-    ph.className = 'w-full h-full flex items-center justify-center text-gray-500 bg-gray-50';
-    ph.innerText = 'Demo video coming soon';
-    demoFrame.replaceWith(ph);
-  }
+    // Contact / links
+    const email  = 'hello@xsellbiz.com';
+    const stripe = ''; // paste your Stripe Payment Link here later, e.g. 'https://buy.stripe.com/...'
 
-  // Calendly (inline embed)
-  const calendlyContainer = document.querySelector('.calendly-inline-widget');
-  if (calendly && calendlyContainer) {
-    const s = document.createElement('script');
-    s.src = 'https://assets.calendly.com/assets/external/widget.js';
-    s.async = true;
-    s.onload = () => {
-      try {
-        Calendly.initInlineWidget({
-          url: calendly + (calendly.includes('?') ? '&' : '?') + 'hide_event_type_details=1&primary_color=000000',
-          parentElement: calendlyContainer,
-          prefill: {},
-          utm: {}
-        });
-      } catch (e) {}
-    };
-    document.head.appendChild(s);
-  } else if (calendlyContainer) {
-    const btn = document.createElement('a');
-    btn.href = `mailto:${email}?subject=Book 15-min demo&body=Hi%20XsellBiz%2C%20I'd%20like%20to%20book%20a%2015-min%20demo.%20Here%20are%20a%20few%20times%20that%20work%20for%20me%3A%0A-%20`;
-    btn.className = 'inline-flex px-4 py-3 rounded-xl bg-black text-white';
-    btn.textContent = 'Email to book a demo';
-    calendlyContainer.replaceWith(btn);
-  }
-
-  // Stripe pilot buttons
-  ['pilotBtn1','pilotBtn2'].forEach(id => {
-    const el = document.getElementById(id);
-    if (!el) return;
-    if (stripe) {
-      el.href = stripe;
-      el.target = '_blank';
-      el.rel = 'noopener';
-    } else {
-      el.href = `mailto:${email}?subject=Start pilot (CHF 490)&body=Hi%20XsellBiz%2C%20we'd%20like%20to%20start%20the%20pilot.%20Company%20name%3A%20_____%0AData%20sources%3A%20Shopify%2FStripe%2F_____%0ATarget%20go-live%3A%20_____%0AInvoice%20details%3A%20_____`;
-    }
-  });
-</script>
+    // Pilot buttons (email fallback if no Stripe yet)
+    ['pilotBtnHero','pilotBtnOffer'].forEach(id => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      if (stripe) {
+        el.href = stripe; el.target = '_blank'; el.rel = 'noopener';
+      } else {
+        el.href = `mailto:${email}?subject=Start pilot (CHF 490)&body=Hi%20XsellBiz%2C%20we'd%20like%20to%20start%20the%20pilot.%20Company%20name%3A%20_____%0AData%20sources%3A%20Shopify%2FStripe%2F_____%0ATarget%20go-live%3A%20_____%0AInvoice%20details%3A%20_____`;
+      }
+    });
+  </script>
 </body>
 </html>
