@@ -19,13 +19,40 @@
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
-  <style>
-    /* Calendly popup fixes (prevent clipping) */
-    html, body { overflow-x: hidden; }
-    .calendly-overlay, .calendly-popup, .calendly-badge-widget { z-index: 99999 !important; }
-    .calendly-popup-content { max-height: none !important; height: auto !important; }
-  </style>
-</head>
+/* --- Calendly FULLSCREEN popup fix --- */
+html, body {
+  overflow-x: hidden !important;
+}
+
+/* Force overlay to cover full viewport */
+.calendly-overlay {
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 999999 !important;
+}
+
+/* Force popup container to center + full size */
+.calendly-popup {
+  position: fixed !important;
+  inset: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  z-index: 999999 !important;
+}
+
+/* Actual calendar panel */
+.calendly-popup-content {
+  width: min(100vw, 900px) !important;
+  height: min(90vh, 700px) !important;
+  max-width: 100vw !important;
+  max-height: 90vh !important;
+  border-radius: 16px !important;
+  overflow: auto !important;
+}
+
 
 <body class="bg-white text-slate-900">
   <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b">
