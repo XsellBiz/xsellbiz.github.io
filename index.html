@@ -19,40 +19,59 @@
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
-/* --- Calendly FULLSCREEN popup fix --- */
-html, body {
-  overflow-x: hidden !important;
-}
+  
+  <style>
+    /* --- Calendly FULLSCREEN popup fix (aggressive) --- */
+    html, body { overflow-x: hidden !important; }
 
-/* Force overlay to cover full viewport */
-.calendly-overlay {
-  position: fixed !important;
-  inset: 0 !important;
-  width: 100vw !important;
-  height: 100vh !important;
-  z-index: 999999 !important;
-}
+    /* Make sure no ancestor clips the modal */
+    * { overflow: visible; }
 
-/* Force popup container to center + full size */
-.calendly-popup {
-  position: fixed !important;
-  inset: 0 !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  z-index: 999999 !important;
-}
+    .calendly-overlay {
+      position: fixed !important;
+      inset: 0 !important;
+      width: 100vw !important;
+      height: 100vh !important;
+      z-index: 2147483647 !important;
+    }
 
-/* Actual calendar panel */
-.calendly-popup-content {
-  width: min(100vw, 900px) !important;
-  height: min(90vh, 700px) !important;
-  max-width: 100vw !important;
-  max-height: 90vh !important;
-  border-radius: 16px !important;
-  overflow: auto !important;
-}
+    .calendly-popup {
+      position: fixed !important;
+      inset: 0 !important;
+      width: 100vw !important;
+      height: 100vh !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      z-index: 2147483647 !important;
+    }
 
+    .calendly-popup-content {
+      width: 96vw !important;
+      height: 92vh !important;
+      max-width: 96vw !important;
+      max-height: 92vh !important;
+      border-radius: 16px !important;
+      overflow: hidden !important;
+      box-shadow: 0 20px 60px rgba(0,0,0,.35) !important;
+      background: white !important;
+    }
+
+    /* Calendly renders an iframe inside the popup content */
+    .calendly-popup-content iframe {
+      width: 100% !important;
+      height: 100% !important;
+      min-height: 92vh !important;
+      border: 0 !important;
+    }
+
+    /* Some builds use wrapper divs */
+    .calendly-inline-widget, .calendly-badge-widget, .calendly-spinner {
+      z-index: 2147483647 !important;
+    }
+  </style>
+
+</head>
 
 <body class="bg-white text-slate-900">
   <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b">
@@ -80,7 +99,7 @@ html, body {
           Weekly reporting <span class="whitespace-nowrap">without copy‑paste</span>
         </h1>
         <p class="mt-4 text-lg text-slate-700">
-          I will turn your Shopify/Stripe/CSV exports into a <span class="font-semibold">refresh‑button Excel dashboard</span>
+          I turn your Shopify/Stripe/CSV exports into a <span class="font-semibold">refresh‑button Excel dashboard</span>
           plus a <span class="font-semibold">Flags</span> tab (duplicates, outliers, missing keys).
         </p>
 
