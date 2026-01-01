@@ -1,1 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>XsellBiz — Automated KPI & Management Reporting for Finance Leaders</title>
+  <meta name="description" content="Reduce manual reporting, improve data reliability, and give management clear, timely insight — using Excel-first, KNIME-powered automation." />
 
+  <link rel="canonical" href="https://www.xsellbiz.com/" />
+  <meta property="og:title" content="XsellBiz — Automated KPI & Management Reporting for Finance Leaders" />
+  <meta property="og:description" content="Refresh-button Excel dashboard + Flags tab for Shopify/Stripe/CSV exports. Setup CHF 490. Retainer from CHF 650/mo." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.xsellbiz.com/" />
+  <meta name="format-detection" content="telephone=no" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Calendly widget -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+  
+  <style>
+    /* --- Calendly FULLSCREEN popup fix (aggressive) --- */
+    html, body { overflow-x: hidden !important; }
+
+    /* Make sure no ancestor clips the modal */
+    * { overflow: visible; }
+
+    .calendly-overlay {
+      position: fixed !important;
+      inset: 0 !important;
+      width: 100vw !important;
+      height: 100vh !important;
+      z-index: 2147483647 !important;
+    }
+
+    .calendly-popup {
+      position: fixed !important;
+      inset: 0 !important;
+      width: 100vw !important;
+      height: 100vh !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      z-index: 2147483647 !important;
+    }
+
+    .calendly-popup-content {
+      width: 96vw !important;
+      height: 92vh !important;
+      max-width: 96vw !important;
+      max-height: 92vh !important;
+      border-radius: 16px !important;
+      overflow: hidden !important;
+      box-shadow: 0 20px 60px rgba(0,0,0,.35) !important;
+      background: white !important;
+    }
+
+    /* Calendly renders an iframe inside the popup content */
+    .calendly-popup-content iframe {
+      width: 100% !important;
+      height: 100% !important;
+      min-height: 92vh !important;
+      border: 0 !important;
+    }
+
+    /* Some builds use wrapper divs */
+    .calendly-inline-widget, .calendly-badge-widget, .calendly-spinner {
+      z-index: 2147483647 !important;
+    }
+  </style>
+
+</head>
+
+<body class="bg-white text-slate-900">
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#top" class="font-semibold tracking-tight">XsellBiz</a>
+      <nav class="hidden md:flex gap-6 text-sm text-slate-600">
+        <a href="#how" class="hover:text-slate-900">How it works</a>
+        <a href="#offer" class="hover:text-slate-900">Offer</a>
+        <a href="#faq" class="hover:text-slate-900">FAQ</a>
+        <a href="#book" class="hover:text-slate-900">Book</a>
+      </nav>
+      <div class="flex gap-2">
+        <button id="navBookBtn" class="px-4 py-2 rounded-full bg-slate-900 text-white text-sm hover:bg-slate-800">
+          Book 15‑min demo
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="max-w-6xl mx-auto px-4 py-14 grid md:grid-cols-2 gap-10 items-start">
+      <div>
+        <h1 class="text-4xl md:text-5xl font-bold leading-tight">
+          Weekly reporting <span class="whitespace-nowrap">without copy‑paste</span>
+        </h1>
+        <p class="mt-4 text-lg text-slate-700">
+          I turn your Shopify/Stripe/CSV exports into a <span class="font-semibold">refresh‑button Excel dashboard</span>
+          plus a <span class="font-semibold">Flags</span> tab (duplicates, outliers, missing keys).
+        </p>
+
+        <ul class="mt-6 space-y-2 text-slate-700">
+          <li>• Setup <span class="font-semibold">CHF 490</span> (one‑time)</li>
+          <li>• Retainer <span class="font-semibold">from CHF 650/mo</span> • 48‑hour SLA</li>
+          <li>• Runs locally — your data stays with you</li>
+        </ul>
+
+        <div class="mt-7 flex flex-wrap gap-3">
+          <button id="heroBookBtn" class="px-5 py-3 rounded-xl bg-slate-900 text-white font-medium hover:bg-slate-800">
+            Book 15‑min demo
+          </button>
+          <a id="pilotBtnHero" href="https://buy.stripe.com/test_28E6oH6IobuKgmv1jB9oc00" target="_blank" rel="noopener"
+             class="px-5 py-3 rounded-xl border font-medium hover:bg-slate-50">
+            Start pilot (CHF 490)
+          </a>
+        </div>
+
+        <p class="mt-3 text-xs text-slate-500">Tip: add UTM to links, e.g. <code>?utm_source=linkedin</code></p>
+      </div>
+
+      <div class="rounded-2xl border bg-slate-50 p-3">
+        <div class="aspect-video w-full overflow-hidden rounded-xl bg-white border">
+          <iframe class="w-full h-full" src="https://www.loom.com/embed/05557bee494c4fd7851f8e27741160d5" title="XsellBiz demo video"
+                  frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        </div>
+        <p class="mt-2 text-xs text-slate-500">90‑sec: Before → Click → After</p>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section id="how" class="border-t">
+      <div class="max-w-6xl mx-auto px-4 py-14">
+        <h2 class="text-2xl md:text-3xl font-semibold">How it works</h2>
+        <div class="mt-8 grid md:grid-cols-3 gap-6">
+          <div class="rounded-2xl border p-6">
+            <div class="text-xs text-slate-500">STEP 1</div>
+            <div class="mt-2 font-semibold">Drop exports into <code>/input/</code></div>
+            <p class="mt-2 text-slate-600">Orders, fees, shipping (or CRM contacts). We map headers once.</p>
+          </div>
+          <div class="rounded-2xl border p-6">
+            <div class="text-xs text-slate-500">STEP 2</div>
+            <div class="mt-2 font-semibold">Click <em>Refresh</em></div>
+            <p class="mt-2 text-slate-600">Power Query/KNIME cleans, joins, and flags issues automatically.</p>
+          </div>
+          <div class="rounded-2xl border p-6">
+            <div class="text-xs text-slate-500">STEP 3</div>
+            <div class="mt-2 font-semibold">Use the clean table & dashboard</div>
+            <p class="mt-2 text-slate-600">Share <code>clean.csv</code>, scan Flags, and review KPIs.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Offer -->
+    <section id="offer" class="border-t bg-slate-50">
+      <div class="max-w-6xl mx-auto px-4 py-14">
+        <h2 class="text-2xl md:text-3xl font-semibold">Offer</h2>
+
+        <div class="mt-8 grid md:grid-cols-2 gap-6">
+          <div class="rounded-2xl border bg-white p-6">
+            <h3 class="text-xl font-semibold">Setup (Pilot)</h3>
+            <p class="mt-1 text-slate-600">CHF 490 one‑time</p>
+            <ul class="mt-4 space-y-2 text-slate-700">
+              <li>• Map headers + baseline reconciliation</li>
+              <li>• Build Flags tab (dupes, missing keys, outliers)</li>
+              <li>• Output template (clean table + dashboard-ready)</li>
+            </ul>
+            <div class="mt-6">
+              <a id="pilotBtnOffer" href="https://buy.stripe.com/test_28E6oH6IobuKgmv1jB9oc00" target="_blank" rel="noopener"
+                 class="inline-flex px-5 py-3 rounded-xl bg-slate-900 text-white font-medium hover:bg-slate-800">
+                Start pilot (CHF 490)
+              </a>
+            </div>
+          </div>
+
+          <div class="rounded-2xl border bg-white p-6">
+            <h3 class="text-xl font-semibold">Reporting Retainer</h3>
+            <p class="mt-1 text-slate-600">From CHF 650/month</p>
+            <ul class="mt-4 space-y-2 text-slate-700">
+              <li>• 2 data sources included (add + CHF 100/source)</li>
+              <li>• Monthly tune‑up + 10‑min Loom recap</li>
+              <li>• 48‑hour SLA (24h priority + CHF 150/mo)</li>
+            </ul>
+            <div class="mt-6">
+              <button id="offerBookBtn" class="inline-flex px-5 py-3 rounded-xl border font-medium hover:bg-slate-50">
+                Book a demo
+              </button>
+              <p class="mt-2 text-xs text-slate-500">Retainer price is agreed after the pilot.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="border-t">
+      <div class="max-w-6xl mx-auto px-4 py-14">
+        <h2 class="text-2xl md:text-3xl font-semibold">FAQ</h2>
+
+        <div class="mt-8 grid md:grid-cols-2 gap-6">
+          <div class="rounded-2xl border p-6">
+            <h3 class="font-semibold">Do you store our data?</h3>
+            <p class="mt-2 text-slate-600">No. Everything runs locally in Excel/KNIME. If you share files for setup, you control where they live (Drive/OneDrive/Dropbox).</p>
+          </div>
+          <div class="rounded-2xl border p-6">
+            <h3 class="font-semibold">What if we don’t like it?</h3>
+            <p class="mt-2 text-slate-600">If the pilot doesn’t save time or reduce errors, you can walk away. The goal is a clean, repeatable refresh process.</p>
+          </div>
+          <div class="rounded-2xl border p-6">
+            <h3 class="font-semibold">Is this GDPR‑friendly?</h3>
+            <p class="mt-2 text-slate-600">Yes. The workflow runs on your machine. No PII is sent to third‑party processors unless you choose to share files.</p>
+          </div>
+          <div class="rounded-2xl border p-6">
+            <h3 class="font-semibold">Can you prioritize fixes?</h3>
+            <p class="mt-2 text-slate-600">Yes — priority support is available (+ CHF 150/mo) with a 24‑hour response target.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Book -->
+    <section id="book" class="border-t bg-slate-50">
+      <div class="max-w-6xl mx-auto px-4 py-14">
+        <h2 class="text-2xl md:text-3xl font-semibold">Book a 15‑minute demo</h2>
+        <p class="mt-3 text-slate-600">Pick a slot that works. I’ll show the 90‑sec flow and what your “Flags tab” would look like.</p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <button id="bookBtn" class="px-5 py-3 rounded-xl bg-slate-900 text-white font-medium hover:bg-slate-800">
+            Open booking popup
+          </button>
+          <a href="https://calendly.com/xsellbiz/demo-15-minutes" target="_blank" rel="noopener"
+             class="px-5 py-3 rounded-xl border font-medium hover:bg-slate-50">
+            Open in new tab
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t">
+    <div class="max-w-6xl mx-auto px-4 py-10 text-sm text-slate-600 flex flex-col md:flex-row justify-between gap-6">
+      <div>
+        <div class="font-semibold text-slate-900">XsellBiz</div>
+        <div>Switzerland</div>
+      
+        <div> <a class="underline" href="mailto:xsellbiz@outlook.com">xsellbiz@outlook.com</a></div>
+
+      </div>
+      <div>
+        <div class="font-semibold text-slate-900">Links</div>
+        <div><a class="underline" href="#how">How it works</a></div>
+        <div><a class="underline" href="#offer">Offer</a></div>
+        <div><a class="underline" href="#faq">FAQ</a></div>
+      </div>
+      <div class="text-xs text-slate-500">
+        <div>Imprint</div>
+        <div>Sole proprietorship. VAT: (if registered). Data is processed locally.</div>
+        <div>© 2025 XsellBiz. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const calendly = 'https://calendly.com/xsellbiz/demo-15-minutes';
+
+    function openCalendly() {
+      if (window.Calendly) {
+        window.Calendly.initPopupWidget({ url: calendly });
+      } else {
+        window.open(calendly, '_blank', 'noopener');
+      }
+      return false;
+    }
+
+    ['navBookBtn','heroBookBtn','offerBookBtn','bookBtn'].forEach(id => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        openCalendly();
+      });
+    });
+  </script>
+</body>
+</html>
