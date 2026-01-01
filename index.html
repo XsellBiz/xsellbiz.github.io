@@ -1,198 +1,179 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>XsellBiz — Automated KPI &amp; Management Reporting</title>
-<meta content="Automated KPI and management reporting for finance leaders. Reduce manual reporting, improve data reliability, and deliver decision-ready insight with Excel-first, KNIME-powered automation." name="description"/>
-<link href="https://www.xsellbiz.com/" rel="canonical"/>
-<meta content="XsellBiz — Automated KPI &amp; Management Reporting" property="og:title"/>
-<meta content="Reduce manual reporting, improve data reliability, and deliver decision-ready insight with Excel-first, KNIME-powered automation." property="og:description"/>
-<meta content="website" property="og:type"/>
-<meta content="https://www.xsellbiz.com/" property="og:url"/>
-<meta content="telephone=no" name="format-detection"/>
-<script src="https://cdn.tailwindcss.com"></script>
-<!-- Calendly widget -->
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"/>
-<script async="" src="https://assets.calendly.com/assets/external/widget.js"></script>
-<style>
-    /* --- Calendly FULLSCREEN popup fix (aggressive) --- */
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>XsellBiz — Automated KPI & Management Reporting</title>
+  <meta content="Automated KPI and management reporting for finance leadership. Reduce manual reporting, improve data reliability, and deliver decision-ready insight with Excel-first, KNIME-powered automation." name="description"/>
+  <link href="https://www.xsellbiz.com/" rel="canonical"/>
+  <meta content="XsellBiz — Automated KPI & Management Reporting" property="og:title"/>
+  <meta content="Reduce manual reporting, improve data reliability, and deliver decision-ready insight with Excel-first, KNIME-powered automation." property="og:description"/>
+  <meta content="website" property="og:type"/>
+  <meta content="https://www.xsellbiz.com/" property="og:url"/>
+  <meta content="telephone=no" name="format-detection"/>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Calendly widget -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"/>
+  <script async src="https://assets.calendly.com/assets/external/widget.js"></script>
+
+  <style>
     html, body { overflow-x: hidden !important; }
-
-    /* Make sure no ancestor clips the modal */
-    * { overflow: visible; }
-
-    .calendly-overlay {
-      position: fixed !important;
-      inset: 0 !important;
-      width: 100vw !important;
-      height: 100vh !important;
-      z-index: 2147483647 !important;
-    }
-
+    .calendly-overlay,
     .calendly-popup {
-      position: fixed !important;
-      inset: 0 !important;
-      width: 100vw !important;
-      height: 100vh !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      z-index: 2147483647 !important;
-    }
-
-    .calendly-popup-content {
-      width: 96vw !important;
-      height: 92vh !important;
-      max-width: 96vw !important;
-      max-height: 92vh !important;
-      border-radius: 16px !important;
-      overflow: hidden !important;
-      box-shadow: 0 20px 60px rgba(0,0,0,.35) !important;
-      background: white !important;
-    }
-
-    /* Calendly renders an iframe inside the popup content */
-    .calendly-popup-content iframe {
-      width: 100% !important;
-      height: 100% !important;
-      min-height: 92vh !important;
-      border: 0 !important;
-    }
-
-    /* Some builds use wrapper divs */
-    .calendly-inline-widget, .calendly-badge-widget, .calendly-spinner {
       z-index: 2147483647 !important;
     }
   </style>
 </head>
+
 <body class="bg-white text-slate-900">
 <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b">
-<div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-<a class="font-semibold tracking-tight" href="#top">XsellBiz</a>
-<nav class="hidden md:flex gap-6 text-sm text-slate-600">
-<a class="hover:text-slate-900" href="#how">How it works</a>
-<a class="hover:text-slate-900" href="#offer">Services</a>
-<a class="hover:text-slate-900" href="#faq">FAQ</a>
-<a class="hover:text-slate-900" href="#book">Assessment</a>
-</nav>
-<div class="flex gap-2">
-<button class="px-4 py-2 rounded-full bg-slate-900 text-white text-sm hover:bg-slate-800" id="navBookBtn">Book assessment</button>
-</div>
-</div>
+  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+    <a class="font-semibold tracking-tight" href="#top">XsellBiz</a>
+    <nav class="hidden md:flex gap-6 text-sm text-slate-600">
+      <a class="hover:text-slate-900" href="#how">How it works</a>
+      <a class="hover:text-slate-900" href="#offer">Services</a>
+      <a class="hover:text-slate-900" href="#faq">FAQ</a>
+      <a class="hover:text-slate-900" href="#book">Assessment</a>
+    </nav>
+    <button class="px-4 py-2 rounded-full bg-slate-900 text-white text-sm hover:bg-slate-800" id="navBookBtn">
+      Book assessment
+    </button>
+  </div>
 </header>
+
 <main id="top">
-<!-- Hero -->
-<section class="max-w-6xl mx-auto px-4 py-14 grid md:grid-cols-2 gap-10 items-start">
-<div>
-<h1 class="text-4xl md:text-5xl font-bold leading-tight">Automated KPI &amp; management reporting<span class="whitespace-nowrap"> for finance leaders</span></h1>
-<p class="mt-4 text-lg text-slate-700">Replace manual reporting with structured, automated KPI and management reporting systems — built for adoption, reliability, and audit-ready control using <span class="font-semibold">Excel-first reporting</span> and <span class="font-semibold">KNIME-powered automation</span>.</p>
-<ul class="mt-6 space-y-2 text-slate-700"><li>• Cut month-end and management reporting effort by 50–80%</li><li>• Improve KPI consistency across systems with validation checks</li><li>• Reduce key-person risk with documentation and maintainable workflows</li></ul>
-<div class="mt-7 flex flex-wrap gap-3">
-<button class="px-5 py-3 rounded-xl bg-slate-900 text-white font-medium hover:bg-slate-800" id="heroBookBtn">Book assessment</button>
 
-<a class="px-5 py-3 rounded-xl border font-medium hover:bg-slate-50" href="#how">See how it works</a></div>
-<p class="mt-3 text-xs text-slate-500">Typical first step: a short assessment call to review your reporting process and identify the highest-impact automation opportunities.</p>
-</div>
-<div class="rounded-2xl border bg-slate-50 p-3">
-<div class="aspect-video w-full overflow-hidden rounded-xl bg-white border">
-<iframe allow="autoplay; fullscreen" allowfullscreen="" class="w-full h-full" frameborder="0" src="https://www.loom.com/embed/05557bee494c4fd7851f8e27741160d5" title="XsellBiz demo video"></iframe>
-</div>
-<p class="mt-2 text-xs text-slate-500">90‑sec: Before → Click → After</p>
-</div>
+<!-- HERO (FULL WIDTH, NO IMAGE) -->
+<section class="max-w-6xl mx-auto px-4 py-16">
+  <h1 class="text-4xl md:text-5xl font-bold leading-tight">
+    Automated KPI &amp; management reporting
+    <span class="whitespace-nowrap"> for finance leadership</span>
+  </h1>
+
+  <p class="mt-4 text-lg text-slate-700 max-w-3xl">
+    Replace manual reporting with structured, automated KPI and management reporting systems —
+    built for adoption, reliability, and audit-ready control using
+    <span class="font-semibold">Excel-first reporting</span> and
+    <span class="font-semibold">KNIME-powered automation</span>.
+  </p>
+
+  <ul class="mt-6 space-y-2 text-slate-700">
+    <li>• Cut month-end and management reporting effort by 50–80%</li>
+    <li>• Improve KPI consistency across systems with validation checks</li>
+    <li>• Reduce key-person risk with documented, maintainable workflows</li>
+  </ul>
+
+  <div class="mt-8 flex flex-wrap gap-3">
+    <button class="px-5 py-3 rounded-xl bg-slate-900 text-white font-medium hover:bg-slate-800" id="heroBookBtn">
+      Book assessment
+    </button>
+    <a class="px-5 py-3 rounded-xl border font-medium hover:bg-slate-50" href="#how">
+      See how it works
+    </a>
+  </div>
+
+  <p class="mt-3 text-xs text-slate-500">
+    Typical first step: a short assessment call to review your reporting process and identify the highest-impact automation opportunities.
+  </p>
 </section>
-<!-- How it works -->
+
+<!-- HOW IT WORKS -->
 <section class="border-t" id="how">
-<div class="max-w-6xl mx-auto px-4 py-14">
-<h2 class="text-2xl md:text-3xl font-semibold">How it works</h2>
-<div class="mt-8 grid md:grid-cols-3 gap-6">
-<div class="rounded-2xl border p-6">
-<div class="text-xs text-slate-500">STEP 1</div>
-<div class="mt-2 font-semibold">Drop exports into <code>/input/</code></div>
-<p class="mt-2 text-slate-600">Orders, fees, shipping (or CRM contacts). We map headers once.</p>
-</div>
-<div class="rounded-2xl border p-6">
-<div class="text-xs text-slate-500">STEP 2</div>
-<div class="mt-2 font-semibold">Click <em>Refresh</em></div>
-<p class="mt-2 text-slate-600">Power Query/KNIME cleans, joins, and flags issues automatically.</p>
-</div>
-<div class="rounded-2xl border p-6">
-<div class="text-xs text-slate-500">STEP 3</div>
-<div class="mt-2 font-semibold">Use the clean table &amp; dashboard</div>
-<p class="mt-2 text-slate-600">Share <code>clean.csv</code>, scan Flags, and review KPIs.</p>
-</div>
-</div>
-</div>
+  <div class="max-w-6xl mx-auto px-4 py-14">
+    <h2 class="text-2xl md:text-3xl font-semibold">How it works</h2>
+    <div class="mt-8 grid md:grid-cols-3 gap-6">
+      <div class="rounded-2xl border p-6">
+        <div class="text-xs text-slate-500">STEP 1</div>
+        <div class="mt-2 font-semibold">Assessment</div>
+        <p class="mt-2 text-slate-600">Review current reporting, data sources, and pain points.</p>
+      </div>
+      <div class="rounded-2xl border p-6">
+        <div class="text-xs text-slate-500">STEP 2</div>
+        <div class="mt-2 font-semibold">Design &amp; Build</div>
+        <p class="mt-2 text-slate-600">Automated workflows, KPI logic, and reporting layers.</p>
+      </div>
+      <div class="rounded-2xl border p-6">
+        <div class="text-xs text-slate-500">STEP 3</div>
+        <div class="mt-2 font-semibold">Handover &amp; Support</div>
+        <p class="mt-2 text-slate-600">Documentation, knowledge transfer, and optional support.</p>
+      </div>
+    </div>
+  </div>
 </section>
-<!-- Offer -->
+
+<!-- SERVICES -->
 <section class="border-t bg-slate-50" id="offer">
-<div class="max-w-6xl mx-auto px-4 py-14">
-<h2 class="text-2xl md:text-3xl font-semibold">Services</h2>
-<div class="mt-8 grid md:grid-cols-3 gap-6"><div class="rounded-2xl border bg-white p-6"><h3 class="text-xl font-semibold">KPI &amp; Management Reporting</h3><p class="mt-2 text-slate-600">Define consistent KPIs and deliver decision-ready reporting layers (Excel-first or BI-ready).</p><ul class="mt-4 space-y-2 text-slate-700"><li>• KPI definitions &amp; metric logic</li><li>• Management reporting packs</li><li>• Versioned, maintainable templates</li></ul></div><div class="rounded-2xl border bg-white p-6"><h3 class="text-xl font-semibold">Reporting Automation</h3><p class="mt-2 text-slate-600">Automate recurring reporting cycles to reduce manual effort and speed up close and leadership updates.</p><ul class="mt-4 space-y-2 text-slate-700"><li>• Automated refresh &amp; scheduling</li><li>• Exception and variance checks</li><li>• Controls and audit-friendly traceability</li></ul></div><div class="rounded-2xl border bg-white p-6"><h3 class="text-xl font-semibold">Data Management (KNIME + Excel)</h3><p class="mt-2 text-slate-600">Build robust data preparation workflows that scale with your systems and keep reporting reliable.</p><ul class="mt-4 space-y-2 text-slate-700"><li>• Data transformations in KNIME</li><li>• Data quality rules</li><li>• Documentation &amp; handover</li></ul></div></div>
-</div>
+  <div class="max-w-6xl mx-auto px-4 py-14">
+    <h2 class="text-2xl md:text-3xl font-semibold">Services</h2>
+    <div class="mt-8 grid md:grid-cols-3 gap-6">
+      <div class="rounded-2xl border bg-white p-6">
+        <h3 class="text-xl font-semibold">KPI &amp; Management Reporting</h3>
+        <p class="mt-2 text-slate-600">Decision-ready reporting aligned with finance leadership.</p>
+      </div>
+      <div class="rounded-2xl border bg-white p-6">
+        <h3 class="text-xl font-semibold">Reporting Automation</h3>
+        <p class="mt-2 text-slate-600">Reduce manual effort with reliable, repeatable workflows.</p>
+      </div>
+      <div class="rounded-2xl border bg-white p-6">
+        <h3 class="text-xl font-semibold">Data Management (KNIME + Excel)</h3>
+        <p class="mt-2 text-slate-600">Scalable data preparation with clear controls and handover.</p>
+      </div>
+    </div>
+  </div>
 </section>
-<!-- FAQ -->
-<section class="border-t" id="faq">
-<div class="max-w-6xl mx-auto px-4 py-14">
-<h2 class="text-2xl md:text-3xl font-semibold">FAQ</h2>
-<div class="mt-8 grid md:grid-cols-2 gap-6"><div class="rounded-2xl border bg-white p-6"><h3 class="text-lg font-semibold">Do you store our data?</h3><p class="mt-2 text-slate-600">By default, no. Solutions are typically designed to run in your environment. If a hosted component is required, we align on security, access, and retention upfront.</p></div><div class="rounded-2xl border bg-white p-6"><h3 class="text-lg font-semibold">What systems can you work with?</h3><p class="mt-2 text-slate-600">Any source that can export data (CSV/Excel) or provide database/API access. KNIME workflows can connect to common databases and tools, and Excel remains the front-end where it makes sense.</p></div><div class="rounded-2xl border bg-white p-6"><h3 class="text-lg font-semibold">What’s a typical timeline?</h3><p class="mt-2 text-slate-600">Most engagements start with a short assessment, followed by a focused build phase. Timelines depend on data sources and complexity, but we aim for practical delivery and quick wins.</p></div><div class="rounded-2xl border bg-white p-6"><h3 class="text-lg font-semibold">How do you ensure KPI reliability?</h3><p class="mt-2 text-slate-600">We implement validation rules, consistency checks, and clear metric definitions so finance leadership can trust the numbers presented to management.</p></div></div>
-</div>
-</section>
-<!-- Book -->
+
+<!-- BOOK -->
 <section class="border-t bg-slate-50" id="book">
-<div class="max-w-6xl mx-auto px-4 py-14">
-<h2 class="text-2xl md:text-3xl font-semibold">Book a KPI &amp; reporting automation assessment</h2>
-<p class="mt-3 text-slate-600">Pick a slot that works. We’ll review your current reporting process and identify the highest-impact automation opportunities.</p>
-<div class="mt-6 flex flex-wrap gap-3">
-<button class="px-5 py-3 rounded-xl bg-slate-900 text-white font-medium hover:bg-slate-800" id="bookBtn">Open booking popup</button>
-<a class="px-5 py-3 rounded-xl border font-medium hover:bg-slate-50" href="https://calendly.com/xsellbiz/demo-15-minutes" rel="noopener" target="_blank">
-            Open in new tab
-          </a>
-</div>
-</div>
+  <div class="max-w-6xl mx-auto px-4 py-14">
+    <h2 class="text-2xl md:text-3xl font-semibold">Book a KPI &amp; reporting automation assessment</h2>
+    <p class="mt-3 text-slate-600">
+      We’ll review your reporting setup and identify the highest-impact automation opportunities.
+    </p>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <button class="px-5 py-3 rounded-xl bg-slate-900 text-white font-medium hover:bg-slate-800" id="bookBtn">
+        Open booking popup
+      </button>
+      <a class="px-5 py-3 rounded-xl border font-medium hover:bg-slate-50"
+         href="https://calendly.com/xsellbiz/demo-15-minutes" target="_blank" rel="noopener">
+        Open in new tab
+      </a>
+    </div>
+  </div>
 </section>
+
 </main>
+
 <footer class="border-t">
-<div class="max-w-6xl mx-auto px-4 py-10 text-sm text-slate-600 flex flex-col md:flex-row justify-between gap-6">
-<div>
-<div class="font-semibold text-slate-900">XsellBiz</div>
-<div>Switzerland</div>
-<div> <a class="underline" href="mailto:xsellbiz@outlook.com">xsellbiz@outlook.com</a></div>
-</div>
-<div>
-<div class="font-semibold text-slate-900">Links</div>
-<div><a class="underline" href="#how">How it works</a></div>
-<div><a class="underline" href="#offer">Offer</a></div>
-<div><a class="underline" href="#faq">FAQ</a></div>
-</div>
-<div class="text-xs text-slate-500">
-<div>Imprint</div>
-<div>Sole proprietorship. VAT: (if registered). Data is processed locally.</div>
-<div>© 2025 XsellBiz. All rights reserved.</div>
-</div>
-</div>
+  <div class="max-w-6xl mx-auto px-4 py-10 text-sm text-slate-600">
+    <div class="font-semibold text-slate-900">XsellBiz</div>
+    <div>Switzerland</div>
+    <div><a class="underline" href="mailto:xsellbiz@outlook.com">xsellbiz@outlook.com</a></div>
+  </div>
 </footer>
+
 <script>
-    const calendly = 'https://calendly.com/xsellbiz/demo-15-minutes';
+  const calendly = 'https://calendly.com/xsellbiz/demo-15-minutes';
 
-    function openCalendly() {
-      if (window.Calendly) {
-        window.Calendly.initPopupWidget({ url: calendly });
-      } else {
-        window.open(calendly, '_blank', 'noopener');
-      }
-      return false;
+  function openCalendly() {
+    if (window.Calendly) {
+      window.Calendly.initPopupWidget({ url: calendly });
+    } else {
+      window.open(calendly, '_blank', 'noopener');
     }
+    return false;
+  }
 
-    ['navBookBtn','heroBookBtn','offerBookBtn','bookBtn'].forEach(id => {
-      const el = document.getElementById(id);
-      if (!el) return;
-      el.addEventListener('click', (e) => {
-        e.preventDefault();
-        openCalendly();
-      });
+  ['navBookBtn','heroBookBtn','bookBtn'].forEach(id => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      openCalendly();
     });
-  </script>
+  });
+</script>
+
 </body>
 </html>
