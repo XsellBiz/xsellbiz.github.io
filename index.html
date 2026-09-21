@@ -1,138 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>XsellBiz — Automated KPI & Management Reporting</title>
-  <meta name="description" content="Automated KPI and management reporting for finance leadership teams with Excel-first, KNIME-powered automation."/>
-  <link rel="canonical" href="https://www.xsellbiz.com/"/>
-
-  <meta property="og:title" content="XsellBiz — Automated KPI & Management Reporting"/>
-  <meta property="og:description" content="Reduce manual reporting, improve data reliability with Excel-first, KNIME-powered automation."/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:url" content="https://www.xsellbiz.com/"/>
-
-  <meta name="format-detection" content="telephone=no"/>
-
-  <script src="https://cdn.tailwindcss.com"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XsellBiz — Automated KPI &amp; Management Reporting</title>
+<style>
+  :root {
+    --navy: #1b2a4a;
+    --green: #3c9a3c;
+    --line: #ddd;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1a1a1a;
+    background: #ffffff;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  a { color: var(--navy); }
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  header {
+    border-bottom: 2px solid var(--navy);
+    padding: 14px 0;
+  }
+  header .wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .logo {
+    font-weight: bold;
+    font-size: 18px;
+    color: var(--navy);
+    text-decoration: none;
+  }
+  .logo span { color: var(--green); }
+  nav a {
+    margin-left: 18px;
+    font-size: 13px;
+    color: #333;
+    text-decoration: none;
+    padding-bottom: 3px;
+  }
+  nav a:hover {
+    color: var(--navy);
+    border-bottom: 2px solid var(--green);
+  }
+  .btn {
+    display: inline-block;
+    border: 1px solid var(--navy);
+    background: #ffffff;
+    color: var(--navy);
+    padding: 6px 14px;
+    font-size: 13px;
+    text-decoration: none;
+  }
+  .btn:hover {
+    background: var(--navy);
+    color: #fff;
+    border-color: var(--navy);
+  }
+  .btn-accent {
+    border-color: var(--green);
+    color: var(--navy);
+  }
+  .btn-accent:hover {
+    background: var(--green);
+    border-color: var(--green);
+    color: #fff;
+  }
+  section {
+    padding: 28px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  section:last-of-type { border-bottom: none; }
+  h1 {
+    font-size: 22px;
+    margin: 0 0 8px 0;
+    color: var(--navy);
+  }
+  h2 {
+    font-size: 16px;
+    margin: 0 0 12px 0;
+    color: var(--navy);
+    border-bottom: 2px solid var(--green);
+    padding-bottom: 4px;
+    display: inline-block;
+  }
+  h3 {
+    font-size: 14px;
+    margin: 0 0 4px 0;
+    color: var(--navy);
+  }
+  p { margin: 0 0 10px 0; }
+  .intro p {
+    max-width: 560px;
+  }
+  table.steps {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 6px;
+  }
+  table.steps td {
+    vertical-align: top;
+    padding: 8px 14px 8px 0;
+    width: 33%;
+    border-top: 1px solid var(--line);
+  }
+  table.steps h3::before {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: var(--green);
+    margin-right: 6px;
+    border-radius: 50%;
+  }
+  ul.services {
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+  }
+  ul.services li {
+    margin-bottom: 6px;
+    padding-left: 16px;
+    position: relative;
+  }
+  ul.services li::before {
+    content: "—";
+    color: var(--green);
+    position: absolute;
+    left: 0;
+  }
+  .faq-item { margin-bottom: 14px; }
+  footer {
+    padding: 20px 0 40px 0;
+    font-size: 13px;
+    color: #444;
+    border-top: 2px solid var(--navy);
+  }
+  footer .wrap {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 16px;
+  }
+</style>
 </head>
+<body>
 
-<body id="top" class="text-slate-900">
-
-<!-- ================= HEADER ================= -->
-<header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b">
-  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-
-    <!-- LOGO -->
-    <a href="#top" class="flex items-center">
-      <img src="./logo.svg"
-           alt="XsellBiz"
-           class="h-8 w-auto">
-    </a>
-
-    <!-- NAV -->
-    <nav class="hidden md:flex gap-6 text-sm text-slate-600">
-      <a class="hover:text-slate-900" href="#how">How it works</a>
-      <a class="hover:text-slate-900" href="#offer">Services</a>
-      <a class="hover:text-slate-900" href="#faq">FAQ</a>
-      <a class="hover:text-slate-900" href="#book">Assessment</a>
+<header>
+  <div class="wrap">
+    <a class="logo" href="#"><img src="logo.svg" alt="XsellBiz" style="height:28px;vertical-align:middle;"></a>
+    <nav>
+      <a href="#how">How it works</a>
+      <a href="#services">Services</a>
+      <a href="#faq">FAQ</a>
+      <a href="#assessment" class="btn btn-accent" style="margin-left:18px;">Book assessment</a>
     </nav>
-
-    <!-- CTA -->
-    <button class="px-4 py-2 rounded-full bg-slate-900 text-white text-sm hover:bg-slate-800" id="navBookBtn">
-      Book assessment
-    </button>
-
   </div>
 </header>
 
-<!-- ================= HERO ================= -->
-<section class="bg-slate-50">
-  <div class="max-w-6xl mx-auto px-4 py-20 grid md:grid-cols-2 gap-12 items-center">
-    <div>
-      <h1 class="text-4xl md:text-5xl font-semibold leading-tight">
-        Automated KPI &<br>management reporting
-      </h1>
-      <p class="mt-6 text-lg text-slate-600">
-        Excel-first, KNIME-powered reporting systems that reduce manual effort and deliver decision-ready insight.
-      </p>
-      <div class="mt-8 flex gap-4">
-        <button id="heroBookBtn" class="px-6 py-3 rounded-full bg-slate-900 text-white hover:bg-slate-800">
-          Book assessment
-        </button>
-      </div>
-    </div>
+<section class="intro">
+  <div class="wrap">
+    <h1>Automated KPI &amp; management reporting</h1>
+    <p>Excel-first, KNIME-powered reporting systems that reduce manual effort and deliver decision-ready insight.</p>
+    <a class="btn btn-accent" href="#assessment">Book assessment</a>
   </div>
 </section>
 
-<!-- ================= HOW ================= -->
-<section id="how" class="max-w-6xl mx-auto px-4 py-20">
-  <h2 class="text-3xl font-semibold mb-8">How it works</h2>
-  <div class="grid md:grid-cols-3 gap-8 text-slate-600">
-    <div>
-      <h3 class="font-medium text-slate-900 mb-2">Assess</h3>
-      <p>Review data sources, KPIs, reporting cycles and pain points.</p>
-    </div>
-    <div>
-      <h3 class="font-medium text-slate-900 mb-2">Automate</h3>
-      <p>Design Excel-first, KNIME-powered reporting pipelines.</p>
-    </div>
-    <div>
-      <h3 class="font-medium text-slate-900 mb-2">Operate</h3>
-      <p>Deliver reliable management reporting with optional ongoing support.</p>
-    </div>
+<section id="how">
+  <div class="wrap">
+    <h2>How it works</h2>
+    <table class="steps">
+      <tr>
+        <td>
+          <h3>Assess</h3>
+          <p>Review data sources, KPIs, reporting cycles and pain points.</p>
+        </td>
+        <td>
+          <h3>Automate</h3>
+          <p>Design Excel-first, KNIME-powered reporting pipelines.</p>
+        </td>
+        <td>
+          <h3>Operate</h3>
+          <p>Deliver reliable management reporting with optional ongoing support.</p>
+        </td>
+      </tr>
+    </table>
   </div>
 </section>
 
-<!-- ================= OFFER ================= -->
-<section id="offer" class="bg-slate-50">
-  <div class="max-w-6xl mx-auto px-4 py-20">
-    <h2 class="text-3xl font-semibold mb-8">Services</h2>
-    <ul class="space-y-4 text-slate-600">
-      <li>• KPI & management reporting automation</li>
-      <li>• Excel / Power Query optimisation</li>
-      <li>• KNIME workflow design</li>
-      <li>• Reporting architecture & controls</li>
+<section id="services">
+  <div class="wrap">
+    <h2>Services</h2>
+    <ul class="services">
+      <li>KPI &amp; management reporting automation</li>
+      <li>Excel / Power Query optimisation</li>
+      <li>KNIME workflow design</li>
+      <li>Reporting architecture &amp; controls</li>
     </ul>
   </div>
 </section>
 
-<!-- ================= FAQ ================= -->
-<section id="faq" class="max-w-6xl mx-auto px-4 py-20">
-  <h2 class="text-3xl font-semibold mb-8">FAQ</h2>
-  <div class="space-y-6 text-slate-600">
-    <p><strong class="text-slate-900">Who do you work with?</strong><br>
-      Finance leadership teams in mid-sized organisations.</p>
-    <p><strong class="text-slate-900">Do you replace internal teams?</strong><br>
-      No — I complement and automate existing processes.</p>
+<section id="faq">
+  <div class="wrap">
+    <h2>FAQ</h2>
+    <div class="faq-item">
+      <h3>Who do you work with?</h3>
+      <p>Finance leadership teams in mid-sized organisations.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Do you replace internal teams?</h3>
+      <p>No — I complement and automate existing processes.</p>
+    </div>
   </div>
 </section>
 
-<!-- ================= BOOK ================= -->
-<section id="book" class="bg-slate-900 text-white">
-  <div class="max-w-6xl mx-auto px-4 py-20 text-center">
-    <h2 class="text-3xl font-semibold mb-6">Book an assessment</h2>
-    <button id="bookBtn" class="px-6 py-3 rounded-full bg-white text-slate-900 hover:bg-slate-200">
-      Schedule via Calendly
-    </button>
+<section id="assessment">
+  <div class="wrap">
+    <h2>Book an assessment</h2>
+    <p>Schedule via Calendly.</p>
+    <a class="btn btn-accent" href="#">Book assessment</a>
   </div>
 </section>
 
-<!-- ================= SCRIPT ================= -->
-<script>
-  function openCalendly() {
-    window.open("https://calendly.com/", "_blank");
-  }
-
-  ['navBookBtn','heroBookBtn','bookBtn'].forEach(id => {
-    const el = document.getElementById(id);
-    if (!el) return;
-    el.addEventListener('click', (e) => {
-      e.preventDefault();
-      openCalendly();
-    });
-  });
-</script>
+<footer>
+  <div class="wrap">
+    <span>&copy; XsellBiz</span>
+    <span>Contact: <a href="mailto:Xsellbiz@outlook.com">Xsellbiz@outlook.com</a></span>
+  </div>
+</footer>
 
 </body>
 </html>
