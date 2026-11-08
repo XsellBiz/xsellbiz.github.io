@@ -1,244 +1,844 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>XsellBiz — Automated KPI &amp; Management Reporting</title>
-<meta name="description" content="Automated KPI and management reporting for Swiss manufacturers. Validated, auditable monthly reports built on KNIME. Contact for a scoping call.">  
-<style>
-  :root {
-    --navy: #1b2a4a;
-    --green: #3c9a3c;
-    --line: #ddd;
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #1a1a1a;
-    background: #ffffff;
-    font-size: 15px;
-    line-height: 1.5;
-  }
-  a { color: var(--navy); }
-  .wrap {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  header {
-    border-bottom: 2px solid var(--navy);
-    padding: 14px 0;
-  }
-  header .wrap {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  .logo {
-    font-weight: bold;
-    font-size: 18px;
-    color: var(--navy);
-    text-decoration: none;
-  }
-  .logo span { color: var(--green); }
-  nav a {
-    margin-left: 18px;
-    font-size: 13px;
-    color: #333;
-    text-decoration: none;
-    padding-bottom: 3px;
-  }
-  nav a:hover {
-    color: var(--navy);
-    border-bottom: 2px solid var(--green);
-  }
-  .btn {
-    display: inline-block;
-    border: 1px solid var(--navy);
-    background: #ffffff;
-    color: var(--navy);
-    padding: 6px 14px;
-    font-size: 13px;
-    text-decoration: none;
-  }
-  .btn:hover {
-    background: var(--navy);
-    color: #fff;
-    border-color: var(--navy);
-  }
-  .btn-accent {
-    border-color: var(--green);
-    color: var(--navy);
-  }
-  .btn-accent:hover {
-    background: var(--green);
-    border-color: var(--green);
-    color: #fff;
-  }
-  section {
-    padding: 28px 0;
-    border-bottom: 1px solid var(--line);
-  }
-  section:last-of-type { border-bottom: none; }
-  h1 {
-    font-size: 22px;
-    margin: 0 0 8px 0;
-    color: var(--navy);
-  }
-  h2 {
-    font-size: 16px;
-    margin: 0 0 12px 0;
-    color: var(--navy);
-    border-bottom: 2px solid var(--green);
-    padding-bottom: 4px;
-    display: inline-block;
-  }
-  h3 {
-    font-size: 14px;
-    margin: 0 0 4px 0;
-    color: var(--navy);
-  }
-  p { margin: 0 0 10px 0; }
-  .intro p {
-    max-width: 560px;
-  }
-  table.steps {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 6px;
-  }
-  table.steps td {
-    vertical-align: top;
-    padding: 8px 14px 8px 0;
-    width: 33%;
-    border-top: 1px solid var(--line);
-  }
-  table.steps h3::before {
-    content: "";
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    background: var(--green);
-    margin-right: 6px;
-    border-radius: 50%;
-  }
-  ul.services {
-    margin: 0;
-    padding-left: 0;
-    list-style: none;
-  }
-  ul.services li {
-    margin-bottom: 6px;
-    padding-left: 16px;
-    position: relative;
-  }
-  ul.services li::before {
-    content: "—";
-    color: var(--green);
-    position: absolute;
-    left: 0;
-  }
-  .faq-item { margin-bottom: 14px; }
-  footer {
-    padding: 20px 0 40px 0;
-    font-size: 13px;
-    color: #444;
-    border-top: 2px solid var(--navy);
-  }
-  footer .wrap {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    padding-top: 16px;
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>XsellBiz | Managed KPI Reporting for Manufacturing</title>
+
+  <meta name="description"
+        content="XsellBiz provides automated KPI reporting services for Swiss manufacturing and operations teams. Recurring Excel KPI reports, technical validation and reliable reporting delivery.">
+
+  <style>
+    :root {
+      --navy: #1b2a4a;
+      --green: #3c9a3c;
+      --text: #1a1a1a;
+      --muted: #586270;
+      --line: #dddddd;
+      --light: #f7f9fb;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: #ffffff;
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--navy);
+    }
+
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    header {
+      border-bottom: 2px solid var(--navy);
+      background: #ffffff;
+    }
+
+    header .wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding-top: 17px;
+      padding-bottom: 17px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      font-weight: bold;
+      font-size: 20px;
+      text-decoration: none;
+      color: var(--navy);
+    }
+
+    .logo img {
+      height: 32px;
+      max-width: 180px;
+      object-fit: contain;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    nav a {
+      font-size: 13px;
+      text-decoration: none;
+      color: #333333;
+    }
+
+    nav a:hover {
+      color: var(--green);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 11px 20px;
+      border: 1px solid var(--navy);
+      background: #ffffff;
+      color: var(--navy);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: bold;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .btn:hover {
+      background: var(--navy);
+      color: #ffffff;
+    }
+
+    .btn-accent {
+      background: var(--green);
+      color: #ffffff;
+      border-color: var(--green);
+    }
+
+    .btn-accent:hover {
+      background: #2d772d;
+      border-color: #2d772d;
+    }
+
+    section {
+      padding: 55px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    section:last-of-type {
+      border-bottom: none;
+    }
+
+    h1, h2, h3 {
+      color: var(--navy);
+      line-height: 1.3;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin: 0 0 18px;
+      max-width: 760px;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin: 0 0 22px;
+    }
+
+    h3 {
+      font-size: 17px;
+      margin: 0 0 10px;
+    }
+
+    p {
+      margin: 0 0 16px;
+    }
+
+    .intro {
+      background: var(--light);
+      padding: 75px 0;
+    }
+
+    .intro .lead {
+      max-width: 690px;
+      font-size: 18px;
+      color: #344054;
+      margin-bottom: 18px;
+    }
+
+    .intro .sublead {
+      max-width: 690px;
+      color: var(--muted);
+      margin-bottom: 26px;
+    }
+
+    .eyebrow {
+      color: var(--green);
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1.3px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .section-intro {
+      max-width: 740px;
+      color: var(--muted);
+      margin-bottom: 26px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      padding: 24px;
+      border: 1px solid var(--line);
+      background: #ffffff;
+    }
+
+    .card p {
+      color: #4b5563;
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+
+    .step-number {
+      color: var(--green);
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    .service-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px 28px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .service-list li {
+      padding-left: 23px;
+      position: relative;
+    }
+
+    .service-list li::before {
+      content: "✓";
+      color: var(--green);
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+    }
+
+    .light-section {
+      background: var(--light);
+    }
+
+    .scope-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+
+    .scope-box {
+      background: #ffffff;
+      border: 1px solid var(--line);
+      padding: 24px;
+    }
+
+    .scope-box ul {
+      margin: 10px 0 0;
+      padding-left: 20px;
+    }
+
+    .scope-box li {
+      margin-bottom: 9px;
+    }
+
+    .pricing-box {
+      border-left: 4px solid var(--green);
+      background: var(--light);
+      padding: 24px 28px;
+      max-width: 760px;
+    }
+
+    .pricing-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .faq-item {
+      margin-bottom: 28px;
+      max-width: 800px;
+    }
+
+    .faq-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .faq-item p {
+      color: #4b5563;
+    }
+
+    .contact-section {
+      background: var(--light);
+      text-align: center;
+    }
+
+    .contact-section p {
+      max-width: 620px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .contact-section .btn {
+      margin: 10px 0 18px;
+    }
+
+    .contact-email {
+      font-size: 14px;
+    }
+
+    footer {
+      padding: 28px 0;
+      border-top: 2px solid var(--navy);
+      font-size: 13px;
+      color: #505866;
+    }
+
+    footer .wrap {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 700px) {
+      h1 {
+        font-size: 28px;
+      }
+
+      h2 {
+        font-size: 22px;
+      }
+
+      section {
+        padding: 38px 0;
+      }
+
+      .intro {
+        padding: 50px 0;
+      }
+
+      .grid,
+      .service-list,
+      .scope-grid {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        gap: 12px;
+      }
+
+      nav a {
+        font-size: 12px;
+      }
+
+      .card,
+      .scope-box {
+        padding: 20px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<header>
-  <div class="wrap">
-    <a class="logo" href="#"><img src="logo.svg" alt="XsellBiz" style="height:28px;vertical-align:middle;"></a>
-    <nav>
-      <a href="#how">How it works</a>
-      <a href="#services">Services</a>
-      <a href="#faq">FAQ</a>
-      <a href="#assessment" class="btn btn-accent" style="margin-left:18px;">Book assessment</a>
-    </nav>
-  </div>
-</header>
+  <!-- HEADER -->
 
-<section class="intro">
-  <div class="wrap">
-    <h1>Automated KPI &amp; management reporting</h1>
-    <p>Excel-first, KNIME-powered reporting systems that reduce manual effort and deliver decision-ready insight.</p>
-    <a class="btn btn-accent" href="#assessment">Book assessment</a>
-  </div>
-</section>
+  <header>
+    <div class="wrap">
 
-<section id="how">
-  <div class="wrap">
-    <h2>How it works</h2>
-    <table class="steps">
-      <tr>
-        <td>
-          <h3>Assess</h3>
-          <p>Review data sources, KPIs, reporting cycles and pain points.</p>
-        </td>
-        <td>
-          <h3>Automate</h3>
-          <p>Design Excel-first, KNIME-powered reporting pipelines.</p>
-        </td>
-        <td>
-          <h3>Operate</h3>
-          <p>Deliver reliable management reporting with optional ongoing support.</p>
-        </td>
-      </tr>
-    </table>
-  </div>
-</section>
+      <a class="logo" href="#top">
+        <img src="logo.svg" alt="XsellBiz">
+      </a>
 
-<section id="services">
-  <div class="wrap">
-    <h2>Services</h2>
-    <ul class="services">
-      <li>KPI &amp; management reporting automation</li>
-      <li>Excel / Power Query optimisation</li>
-      <li>KNIME workflow design</li>
-      <li>Reporting architecture &amp; controls</li>
-    </ul>
-  </div>
-</section>
+      <nav aria-label="Main navigation">
+        <a href="#how">How it works</a>
+        <a href="#services">Services</a>
+        <a href="#pricing">Engagement</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact" class="btn btn-accent">
+          Contact us
+        </a>
+      </nav>
 
-<section id="faq">
-  <div class="wrap">
-    <h2>FAQ</h2>
-    <div class="faq-item">
-      <h3>Who do you work with?</h3>
-      <p>Finance leadership teams in mid-sized organisations.</p>
     </div>
-    <div class="faq-item">
-      <h3>Do you replace internal teams?</h3>
-      <p>No — I complement and automate existing processes.</p>
+  </header>
+
+
+  <!-- HERO -->
+
+  <main id="top">
+
+    <section class="intro">
+      <div class="wrap">
+
+        <div class="eyebrow">
+          KPI Reporting Operations
+        </div>
+
+        <h1>
+          Managed KPI Reporting for
+          Manufacturing &amp; Operations
+        </h1>
+
+        <p class="lead">
+          Consistent KPI reports.
+          Less manual reporting work.
+        </p>
+
+        <p class="sublead">
+          XsellBiz transforms your existing production,
+          delivery, quality and inventory reports into
+          structured, repeatable Excel KPI reporting outputs.
+        </p>
+
+        <p class="sublead">
+          We manage the technical reporting process,
+          including automated calculations, agreed data checks,
+          report preparation and scheduled delivery.
+        </p>
+
+        <a class="btn btn-accent" href="#contact">
+          Discuss your reporting requirements
+        </a>
+
+      </div>
+    </section>
+
+
+    <!-- HOW IT WORKS -->
+
+    <section id="how">
+      <div class="wrap">
+
+        <h2>How It Works</h2>
+
+        <p class="section-intro">
+          A structured approach to recurring operational KPI
+          reporting using your existing data sources.
+        </p>
+
+        <div class="grid">
+
+          <div class="card">
+            <div class="step-number">01</div>
+
+            <h3>Assess</h3>
+
+            <p>
+              We review your source reports,
+              reporting frequency, KPI definitions
+              and existing reporting requirements.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="step-number">02</div>
+
+            <h3>Implement</h3>
+
+            <p>
+              We configure, map and test the automated
+              KPI calculation and reporting process
+              against agreed specifications.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="step-number">03</div>
+
+            <h3>Deliver</h3>
+
+            <p>
+              We produce scheduled KPI reporting outputs,
+              including agreed technical validation
+              and exception reporting.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- SERVICES -->
+
+    <section id="services">
+      <div class="wrap">
+
+        <h2>Our Services</h2>
+
+        <p class="section-intro">
+          XsellBiz provides ongoing KPI reporting operations,
+          designed to reduce repetitive manual report preparation
+          without requiring replacement of your existing systems.
+        </p>
+
+        <ul class="service-list">
+
+          <li>
+            Production KPI reporting
+          </li>
+
+          <li>
+            Delivery KPI reporting
+          </li>
+
+          <li>
+            Quality KPI reporting
+          </li>
+
+          <li>
+            Inventory KPI reporting
+          </li>
+
+          <li>
+            Automated KPI calculations
+          </li>
+
+          <li>
+            Recurring Excel KPI report generation
+          </li>
+
+          <li>
+            Technical validation and exception reporting
+          </li>
+
+          <li>
+            KPI calculation configuration maintenance
+          </li>
+
+          <li>
+            Scheduled report processing and delivery
+          </li>
+
+          <li>
+            Reporting automation maintenance
+          </li>
+
+        </ul>
+
+      </div>
+    </section>
+
+
+    <!-- RESPONSIBILITIES -->
+
+    <section class="light-section" id="responsibilities">
+      <div class="wrap">
+
+        <h2>Clear Responsibilities</h2>
+
+        <p class="section-intro">
+          XsellBiz manages the agreed technical KPI reporting
+          process. Your organisation retains control of
+          its business data, definitions and decisions.
+        </p>
+
+        <div class="scope-grid">
+
+          <div class="scope-box">
+
+            <h3>XsellBiz Responsibilities</h3>
+
+            <ul>
+              <li>
+                Automated processing of agreed data exports
+              </li>
+
+              <li>
+                Application of approved KPI calculations
+              </li>
+
+              <li>
+                Agreed technical data checks
+              </li>
+
+              <li>
+                Reporting of identified processing exceptions
+              </li>
+
+              <li>
+                Preparation and delivery of KPI reports
+              </li>
+
+              <li>
+                Maintenance of the agreed reporting process
+              </li>
+            </ul>
+
+          </div>
+
+          <div class="scope-box">
+
+            <h3>Client Responsibilities</h3>
+
+            <ul>
+              <li>
+                Accuracy and completeness of source data
+              </li>
+
+              <li>
+                Timely provision of agreed data exports
+              </li>
+
+              <li>
+                Approval of KPI definitions and requirements
+              </li>
+
+              <li>
+                Business interpretation of KPI results
+              </li>
+
+              <li>
+                Operational decisions and actions
+              </li>
+
+              <li>
+                Correction of source-data issues
+              </li>
+            </ul>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- COMMERCIAL MODEL -->
+
+    <section id="pricing">
+      <div class="wrap">
+
+        <h2>How Engagements Are Structured</h2>
+
+        <p class="section-intro">
+          Our service combines an initial implementation
+          with an ongoing recurring reporting agreement.
+        </p>
+
+        <div class="pricing-box">
+
+          <h3>One-Time Implementation</h3>
+
+          <p>
+            Initial configuration, source mapping,
+            agreed KPI setup, testing and reporting
+            process implementation.
+          </p>
+
+          <h3>Monthly Reporting Retainer</h3>
+
+          <p>
+            Scheduled KPI processing, agreed technical
+            checks, reporting delivery and routine
+            maintenance within the contracted scope.
+          </p>
+
+          <h3>Additional Requirements</h3>
+
+          <p>
+            New datasets, additional sites, substantial
+            source structure changes and new KPI
+            requirements are scoped separately.
+          </p>
+
+          <p>
+            Pricing depends on the number of datasets,
+            sites, KPIs, reporting frequency and
+            service requirements.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- FAQ -->
+
+    <section id="faq">
+      <div class="wrap">
+
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+
+          <h3>Who is XsellBiz for?</h3>
+
+          <p>
+            Manufacturing and operations teams that
+            want to reduce manual KPI reporting
+            and establish a consistent, repeatable
+            reporting process.
+          </p>
+
+        </div>
+
+        <div class="faq-item">
+
+          <h3>Do we need to replace our existing systems?</h3>
+
+          <p>
+            No. XsellBiz works with agreed exports
+            from your existing operational systems,
+            such as Excel-based reports.
+          </p>
+
+        </div>
+
+        <div class="faq-item">
+
+          <h3>What type of reports do we receive?</h3>
+
+          <p>
+            Structured Excel KPI reports with
+            agreed calculation definitions,
+            reporting periods and applicable
+            technical exception information.
+          </p>
+
+        </div>
+
+        <div class="faq-item">
+
+          <h3>Who is responsible for data quality?</h3>
+
+          <p>
+            The client remains responsible for the
+            accuracy, completeness and business
+            validity of the source data.
+            XsellBiz performs agreed technical
+            validation checks and reports identified
+            processing exceptions.
+          </p>
+
+        </div>
+
+        <div class="faq-item">
+
+          <h3>Does XsellBiz interpret business performance?</h3>
+
+          <p>
+            No. Business interpretation, KPI targets
+            and operational decisions remain with
+            the client's management team.
+          </p>
+
+        </div>
+
+        <div class="faq-item">
+
+          <h3>Is this a one-time project or an ongoing service?</h3>
+
+          <p>
+            XsellBiz is primarily an ongoing KPI
+            reporting service, with an initial
+            implementation followed by a recurring
+            monthly service agreement.
+          </p>
+
+        </div>
+
+        <div class="faq-item">
+
+          <h3>How is pricing determined?</h3>
+
+          <p>
+            Pricing is based on the agreed reporting
+            scope, including datasets, sites,
+            KPI requirements, processing frequency
+            and support needs.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section id="contact" class="contact-section">
+      <div class="wrap">
+
+        <h2>Discuss Your KPI Reporting Requirements</h2>
+
+        <p>
+          Looking to reduce manual reporting work
+          and establish consistent operational KPI reports?
+        </p>
+
+        <p>
+          Contact XsellBiz to arrange an introductory
+          discussion about your existing reporting
+          process and requirements.
+        </p>
+
+        <a class="btn btn-accent"
+           href="mailto:Xsellbiz@outlook.com?subject=XsellBiz%20KPI%20Reporting%20Enquiry">
+          Request an introductory call
+        </a>
+
+        <p class="contact-email">
+          Or email
+          <a href="mailto:Xsellbiz@outlook.com">
+            Xsellbiz@outlook.com
+          </a>
+        </p>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+    <div class="wrap">
+
+      <span>
+        &copy; <span id="year">2026</span> XsellBiz
+      </span>
+
+      <span>
+        Automated KPI Reporting Services
+      </span>
+
+      <span>
+        <a href="mailto:Xsellbiz@outlook.com">
+          Contact
+        </a>
+      </span>
+
     </div>
-  </div>
-</section>
+  </footer>
 
-<section id="assessment">
-  <div class="wrap">
-    <h2>Book an assessment</h2>
-    <p>Schedule via Calendly.</p>
-    <a class="btn btn-accent" href="#">Book assessment</a>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    <span>&copy; XsellBiz</span>
-    <span>Contact: <a href="mailto:Xsellbiz@outlook.com">Xsellbiz@outlook.com</a></span>
-  </div>
-</footer>
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
 
 </body>
 </html>
